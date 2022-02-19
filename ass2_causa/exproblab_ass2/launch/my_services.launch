@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="go_to_point" pkg="exproblab_ass2" type ="go_to_point.py"/>
+  <node name="listener" pkg="exproblab_ass2" type ="listener.py" output="screen" />
+  <node name="replan" pkg="exproblab_ass2" type ="replan.py"/>
+</launch>
