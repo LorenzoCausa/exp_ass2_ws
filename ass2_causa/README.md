@@ -8,6 +8,9 @@ In the diagram below you can see the nodes necessary for the correct functioning
 
 ![Alt text](images/componentUML.png?raw=true)
 
+* **start:** This node starts the investigation and replan in a loop until the solution is found. The solution is signaled by receiving the message with the ID of the correct hypothesis (via subscrition to the topic /final solution).
+* 
+
 # TO DO LIST:
 1) Aggiusta il plan, ogni volta rifa initialize e potrebbe tornare a prendere l'hint dall'ultimo waypoint 
 2) Aggiungi test_hp 
