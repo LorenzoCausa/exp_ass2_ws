@@ -1,0 +1,102 @@
+\hypertarget{check__hp_8cpp}{}\doxysection{rosplan\+\_\+interface\+\_\+ass2/src/check\+\_\+hp.cpp File Reference}
+\label{check__hp_8cpp}\index{rosplan\_interface\_ass2/src/check\_hp.cpp@{rosplan\_interface\_ass2/src/check\_hp.cpp}}
+
+
+check my hypotheses  
+
+
+{\ttfamily \#include \char`\"{}rosplan\+\_\+interface\+\_\+ass2/check\+\_\+hp.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib/client/simple\+\_\+action\+\_\+client.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib/client/terminal\+\_\+state.\+h$>$}\newline
+{\ttfamily \#include $<$exproblab\+\_\+ass2/go\+\_\+to\+\_\+point\+Action.\+h$>$}\newline
+{\ttfamily \#include $<$exproblab\+\_\+ass2/\+Move\+\_\+arm.\+h$>$}\newline
+{\ttfamily \#include $<$exproblab\+\_\+ass2/\+Cons\+\_\+\+I\+Ds.\+h$>$}\newline
+{\ttfamily \#include $<$exproblab\+\_\+ass2/\+Replan\+\_\+srv.\+h$>$}\newline
+Include dependency graph for check\+\_\+hp.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{check__hp_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_k_c_l__rosplan}{K\+C\+L\+\_\+rosplan}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{check__hp_8cpp_a292bce4a4894e2c200553fd2b65b08cd}{new\+\_\+cons\+\_\+\+HP}} ()
+\item 
+int \mbox{\hyperlink{check__hp_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em check my hypotheses to see if I have new consistent \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Service\+Client \mbox{\hyperlink{check__hp_8cpp_ae8b0442ab7315f1316520c8f2b4ecd4f}{cons\+\_\+\+I\+Ds\+\_\+client}}
+\item 
+ros\+::\+Service\+Client \mbox{\hyperlink{check__hp_8cpp_a7ff29cb32d0975a11126872008e95cbc}{replan\+\_\+client}}
+\item 
+exproblab\+\_\+ass2\+::\+Cons\+\_\+\+I\+Ds \mbox{\hyperlink{check__hp_8cpp_af9407637dcf0169d8a3d8906b821ea39}{Cons\+\_\+\+I\+Ds\+\_\+srv}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+check my hypotheses 
+
+\begin{DoxyAuthor}{Author}
+Lorenzo Causa 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+Clients \+: ~\newline
+ /consistent\+\_\+\+I\+Ds
+
+/replan\+\_\+service
+
+Description \+:
+
+This node check my hypotheses to see if I have new consistent, if no it triggers the replanning 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{check__hp_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{check__hp_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{check\_hp.cpp@{check\_hp.cpp}!main@{main}}
+\index{main@{main}!check\_hp.cpp@{check\_hp.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+check my hypotheses to see if I have new consistent 
+
+\mbox{\Hypertarget{check__hp_8cpp_a292bce4a4894e2c200553fd2b65b08cd}\label{check__hp_8cpp_a292bce4a4894e2c200553fd2b65b08cd}} 
+\index{check\_hp.cpp@{check\_hp.cpp}!new\_cons\_HP@{new\_cons\_HP}}
+\index{new\_cons\_HP@{new\_cons\_HP}!check\_hp.cpp@{check\_hp.cpp}}
+\doxysubsubsection{\texorpdfstring{new\_cons\_HP()}{new\_cons\_HP()}}
+{\footnotesize\ttfamily bool new\+\_\+cons\+\_\+\+HP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{check__hp_8cpp_ae8b0442ab7315f1316520c8f2b4ecd4f}\label{check__hp_8cpp_ae8b0442ab7315f1316520c8f2b4ecd4f}} 
+\index{check\_hp.cpp@{check\_hp.cpp}!cons\_IDs\_client@{cons\_IDs\_client}}
+\index{cons\_IDs\_client@{cons\_IDs\_client}!check\_hp.cpp@{check\_hp.cpp}}
+\doxysubsubsection{\texorpdfstring{cons\_IDs\_client}{cons\_IDs\_client}}
+{\footnotesize\ttfamily ros\+::\+Service\+Client cons\+\_\+\+I\+Ds\+\_\+client}
+
+\mbox{\Hypertarget{check__hp_8cpp_af9407637dcf0169d8a3d8906b821ea39}\label{check__hp_8cpp_af9407637dcf0169d8a3d8906b821ea39}} 
+\index{check\_hp.cpp@{check\_hp.cpp}!Cons\_IDs\_srv@{Cons\_IDs\_srv}}
+\index{Cons\_IDs\_srv@{Cons\_IDs\_srv}!check\_hp.cpp@{check\_hp.cpp}}
+\doxysubsubsection{\texorpdfstring{Cons\_IDs\_srv}{Cons\_IDs\_srv}}
+{\footnotesize\ttfamily exproblab\+\_\+ass2\+::\+Cons\+\_\+\+I\+Ds Cons\+\_\+\+I\+Ds\+\_\+srv}
+
+\mbox{\Hypertarget{check__hp_8cpp_a7ff29cb32d0975a11126872008e95cbc}\label{check__hp_8cpp_a7ff29cb32d0975a11126872008e95cbc}} 
+\index{check\_hp.cpp@{check\_hp.cpp}!replan\_client@{replan\_client}}
+\index{replan\_client@{replan\_client}!check\_hp.cpp@{check\_hp.cpp}}
+\doxysubsubsection{\texorpdfstring{replan\_client}{replan\_client}}
+{\footnotesize\ttfamily ros\+::\+Service\+Client replan\+\_\+client}
+

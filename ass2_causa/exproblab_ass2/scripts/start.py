@@ -1,5 +1,34 @@
 #!/usr/bin/env python
 
+## @package exproblab_ass2
+#   \file start.py
+#   \brief start the investigation
+#   \author Lorenzo Causa
+#   \version 1.0
+#
+#
+#   Clients : <BR>
+#        /rosplan_problem_interface/problem_generation_server
+#
+#        /rosplan_planner_interface/planning_server
+#
+#        /rosplan_parsing_interface/parse_plan
+#
+#        /rosplan_plan_dispatcher/dispatch_plan
+#
+#        /rosplan_knowledge_base/update
+#
+#        /rosplan_knowledge_base/clear
+#
+#    Subscriber : <BR>
+#        /final_solution
+# 
+#           
+# Description:    
+# 
+# This node start the investigation and force replanning until the solution has been found 
+#
+
 import sys
 import copy
 import rospy
@@ -73,7 +102,6 @@ def main():
     rospy.wait_for_service('rosplan_parsing_interface/parse_plan')
     rospy.wait_for_service('rosplan_plan_dispatcher/dispatch_plan')
     rospy.wait_for_service('rosplan_knowledge_base/update')
-    #rospy.wait_for_service('rosplan_knowledge_base/state/propositions')# not used for now, needed for avoid to try to take the hint from your start position
     rospy.wait_for_service('rosplan_knowledge_base/clear')
     print('All services ready')
     
@@ -83,7 +111,6 @@ def main():
     parse_client=rospy.ServiceProxy('rosplan_parsing_interface/parse_plan',Empty)
     dipatch_client=rospy.ServiceProxy('rosplan_plan_dispatcher/dispatch_plan',rosplan_dispatch_msgs.srv.DispatchService) 
     update_knowledge_client=rospy.ServiceProxy('rosplan_knowledge_base/update',rosplan_knowledge_msgs.srv.KnowledgeUpdateService) 
-    #prop_client=rospy.ServiceProxy('rosplan_knowledge_base/state/propositions',rosplan_knowledge_msgs.srv.GetAttributeService) #not used for now, needed for avoid to try to take the hint from your start position
     clear_knowledge=rospy.ServiceProxy('rosplan_knowledge_base/clear',Empty) 
     
     # Generates subscriber
@@ -115,7 +142,7 @@ def main():
         print('Plan dispatched: ')
         time.sleep(1)
 
-    print('case solved!')
+    print('\nCASE SOLVED!')
     print('ID solution: ',solutionID)
     
 if __name__ == '__main__':

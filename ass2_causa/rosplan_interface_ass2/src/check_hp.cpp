@@ -1,3 +1,20 @@
+/**
+* \file check_hp.cpp
+* \brief check my hypotheses
+* \author Lorenzo Causa
+* \version 1.0
+*
+* Clients : <BR>
+*   /consistent_IDs
+*
+*   /replan_service
+*
+* Description :
+*
+* This node check my hypotheses to see if I have new consistent, if no it triggers the replanning
+*
+*/
+
 #include "rosplan_interface_ass2/check_hp.h"
 #include <unistd.h>
 #include <actionlib/client/simple_action_client.h>
@@ -38,6 +55,7 @@ namespace KCL_rosplan {
     // here the implementation of the action
     std::cout << "check hp, if no consistents replan \n ";
     exproblab_ass2::Replan_srv replan_srv;
+    Cons_IDs_srv.request.newIDs=true;
     cons_IDs_client.call(Cons_IDs_srv);
    
     bool at_least_one_new=new_cons_HP();
@@ -47,14 +65,14 @@ namespace KCL_rosplan {
         replan_client.call(replan_srv);
         }
     else{
-        std::cout << " new consistent hp -> go test to test hp \n" ;
+        std::cout << "new consistent hp -> go test to test hp \n" ;
         }
     ROS_INFO("Action (%s) performed: completed!", msg->name.c_str());
     return true;
   }
 }
 
-
+///check my hypotheses to see if I have new consistent
 int main(int argc, char **argv) {
 ros::init(argc, argv, "my_rosplan_action_check_hp", ros::init_options::AnonymousName);
 ros::NodeHandle nh("~");

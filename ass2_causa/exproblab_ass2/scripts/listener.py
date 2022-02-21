@@ -1,5 +1,23 @@
 #!/usr/bin/env python
 
+## @package exproblab_ass2
+#   \file listener.py
+#   \brief collect hints and provide a service to see hypotheses with consistent IDs 
+#   \author Lorenzo Causa
+#   \version 1.0
+#
+#
+#   Subscribes to: <BR>
+#        /oracle_hint
+#
+#   Services to: <BR>
+#        /consistent_IDs
+#          
+# Description:    
+# 
+# This node collect the hints and provide a service to see hypotheses with consistent IDs 
+#
+
 import sys
 import copy
 import rospy
@@ -32,6 +50,7 @@ class Hypothesis:
         self.ID=-1
         
 def callback(hint):
+    """Callback for when a hint is received  """
     #rospy.set_param('ID'+str(hint.ID)+'/'+ hint.key,hint.value)
     flag_duplicate=False
     i=0
@@ -64,24 +83,34 @@ def callback(hint):
                 i=i+1
             hypotheses[hint.ID].murder_weapon.append(hint.value)
 
-    print("New hint added!")
-    print('ID:',hint.ID,",",hint.key,",",hint.value)
+    print("New hint found!")
+    print('ID:',hint.ID,", key: ",hint.key,", value: ",hint.value,"\n")
     
 
     
 def cons_IDs_callback(req):
+    """Service callback, it is used to check and/or test the hypotheses"""
     global old_hp
     IDs= Cons_IDsResponse([0,0,0,0,0,0])
     #IDs.IDs[0]=-1
     #IDs.IDs[1]=-1
-    for i in range(6):
-        print('ID',i,'who: ',hypotheses[i].murderer,'where: ', hypotheses[i].murder_place,'what: ',hypotheses[i].murder_weapon)
-        if(len(hypotheses[i].murderer)==1 and len(hypotheses[i].murder_place)==1 and len(hypotheses[i].murder_weapon)==1):
-            #if(old_hp[i]==0): #serviva per tornare 1 solo quando era la prima volta che trovi l'ipotesi
+    if(req.newIDs):
+        print('\n -----------------------------------MY HYPOTHESES-----------------------------------')
+        for i in range(6):
+            print('ID',i,'who: ',hypotheses[i].murderer,'where: ', hypotheses[i].murder_place,'what: ',hypotheses[i].murder_weapon)
+            if(len(hypotheses[i].murderer)==1 and len(hypotheses[i].murder_place)==1 and len(hypotheses[i].murder_weapon)==1):
+                if(old_hp[i]==0): # per tornare 1 solo quando e la prima volta che trovi l'ipotesi
+                    IDs.IDs[i]=1
+                    old_hp[i]=1
+        print(' -----------------------------------------------------------------------------------')
+        #print('IDs checked \n')
+    
+    else:
+        for i in range(6):
+            if(len(hypotheses[i].murderer)==1 and len(hypotheses[i].murder_place)==1 and len(hypotheses[i].murder_weapon)==1):
                 IDs.IDs[i]=1
-                old_hp[i]=1
-            
-    print('IDs returned')
+        #print('IDs tested')
+
     return IDs
    
 def main():

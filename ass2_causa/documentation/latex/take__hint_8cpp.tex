@@ -1,0 +1,74 @@
+\hypertarget{take__hint_8cpp}{}\doxysection{rosplan\+\_\+interface\+\_\+ass2/src/take\+\_\+hint.cpp File Reference}
+\label{take__hint_8cpp}\index{rosplan\_interface\_ass2/src/take\_hint.cpp@{rosplan\_interface\_ass2/src/take\_hint.cpp}}
+
+
+move my the arm of my robot  
+
+
+{\ttfamily \#include \char`\"{}rosplan\+\_\+interface\+\_\+ass2/take\+\_\+hint.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib/client/simple\+\_\+action\+\_\+client.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib/client/terminal\+\_\+state.\+h$>$}\newline
+{\ttfamily \#include $<$exproblab\+\_\+ass2/go\+\_\+to\+\_\+point\+Action.\+h$>$}\newline
+{\ttfamily \#include $<$exproblab\+\_\+ass2/\+Move\+\_\+arm.\+h$>$}\newline
+Include dependency graph for take\+\_\+hint.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{take__hint_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_k_c_l__rosplan}{K\+C\+L\+\_\+rosplan}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{take__hint_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em This node move the arm of the robot to reach the hint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Service\+Client \mbox{\hyperlink{take__hint_8cpp_af8f34def0757829bd0fae0bdd3edca4a}{client\+\_\+move\+\_\+arm}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+move my the arm of my robot 
+
+\begin{DoxyAuthor}{Author}
+Lorenzo Causa 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+Clients \+: ~\newline
+ /move\+\_\+arm\+\_\+service
+
+Description \+:
+
+This node uses moveit move the arm of the robot to reach the hint 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{take__hint_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{take__hint_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{take\_hint.cpp@{take\_hint.cpp}!main@{main}}
+\index{main@{main}!take\_hint.cpp@{take\_hint.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+This node move the arm of the robot to reach the hint. 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{take__hint_8cpp_af8f34def0757829bd0fae0bdd3edca4a}\label{take__hint_8cpp_af8f34def0757829bd0fae0bdd3edca4a}} 
+\index{take\_hint.cpp@{take\_hint.cpp}!client\_move\_arm@{client\_move\_arm}}
+\index{client\_move\_arm@{client\_move\_arm}!take\_hint.cpp@{take\_hint.cpp}}
+\doxysubsubsection{\texorpdfstring{client\_move\_arm}{client\_move\_arm}}
+{\footnotesize\ttfamily ros\+::\+Service\+Client client\+\_\+move\+\_\+arm}
+

@@ -1,5 +1,20 @@
 #!/usr/bin/env python
 
+## @package exproblab_ass2
+#   \file replan.py
+#   \brief cancel the current plan
+#   \author Lorenzo Causa
+#   \version 1.0
+#
+#
+#   Services: <BR>
+#        /replan_service
+#          
+# Description:    
+# 
+# This node provide a service to cancel the current plan and force a replan (thanks to the code in start.py)
+#
+
 import sys
 import copy
 import rospy
@@ -20,6 +35,7 @@ import numpy as np
 # GLOBAL VARIABLES
 
 def replan_callback(req):
+    """"Callback of replan_service"""
     rospy.wait_for_service('/rosplan_plan_dispatcher/cancel_dispatch')
     #cancel current dispatch
     try:

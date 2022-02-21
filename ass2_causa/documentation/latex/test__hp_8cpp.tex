@@ -1,0 +1,119 @@
+\hypertarget{test__hp_8cpp}{}\doxysection{rosplan\+\_\+interface\+\_\+ass2/src/test\+\_\+hp.cpp File Reference}
+\label{test__hp_8cpp}\index{rosplan\_interface\_ass2/src/test\_hp.cpp@{rosplan\_interface\_ass2/src/test\_hp.cpp}}
+
+
+test my consistent hypotheses  
+
+
+{\ttfamily \#include \char`\"{}rosplan\+\_\+interface\+\_\+ass2/test\+\_\+hp.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib/client/simple\+\_\+action\+\_\+client.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib/client/terminal\+\_\+state.\+h$>$}\newline
+{\ttfamily \#include $<$exproblab\+\_\+ass2/go\+\_\+to\+\_\+point\+Action.\+h$>$}\newline
+{\ttfamily \#include $<$exproblab\+\_\+ass2/\+Move\+\_\+arm.\+h$>$}\newline
+{\ttfamily \#include $<$exproblab\+\_\+ass2/\+Cons\+\_\+\+I\+Ds.\+h$>$}\newline
+{\ttfamily \#include $<$exproblab\+\_\+ass2/\+Replan\+\_\+srv.\+h$>$}\newline
+{\ttfamily \#include $<$exproblab\+\_\+ass2/\+Erl\+Oracle.\+h$>$}\newline
+{\ttfamily \#include $<$exproblab\+\_\+ass2/\+Oracle.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}std\+\_\+msgs/\+Int32.\+h\char`\"{}}\newline
+Include dependency graph for test\+\_\+hp.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test__hp_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespace_k_c_l__rosplan}{K\+C\+L\+\_\+rosplan}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{test__hp_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Test my consistent hypotheses, and if the correct one is found it publish a message to stop the investigation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Service\+Client \mbox{\hyperlink{test__hp_8cpp_ae8b0442ab7315f1316520c8f2b4ecd4f}{cons\+\_\+\+I\+Ds\+\_\+client}}
+\item 
+ros\+::\+Service\+Client \mbox{\hyperlink{test__hp_8cpp_a798ee27eb1bd19aa48e94f203d3b96f6}{test\+\_\+hp\+\_\+client}}
+\item 
+ros\+::\+Publisher \mbox{\hyperlink{test__hp_8cpp_a3679944f731acedb7efd8b04b2b71722}{sol\+\_\+publisher}}
+\item 
+exproblab\+\_\+ass2\+::\+Cons\+\_\+\+I\+Ds \mbox{\hyperlink{test__hp_8cpp_af9407637dcf0169d8a3d8906b821ea39}{Cons\+\_\+\+I\+Ds\+\_\+srv}}
+\item 
+exproblab\+\_\+ass2\+::\+Oracle \mbox{\hyperlink{test__hp_8cpp_a52292d0c85c17f39859a0636d7d083fb}{oracle\+\_\+solution}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+test my consistent hypotheses 
+
+\begin{DoxyAuthor}{Author}
+Lorenzo Causa 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+Clients \+: ~\newline
+ /consistent\+\_\+\+I\+Ds
+
+/oracle\+\_\+solution
+
+Action\+Clients \+: ~\newline
+ /go\+\_\+to\+\_\+point
+
+Publisher \+: ~\newline
+ /final\+\_\+solution
+
+Description \+:
+
+This node test my consistent hypotheses, and if the correct one is found it publish a message to completely stop the investigation 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{test__hp_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{test__hp_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{test\_hp.cpp@{test\_hp.cpp}!main@{main}}
+\index{main@{main}!test\_hp.cpp@{test\_hp.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Test my consistent hypotheses, and if the correct one is found it publish a message to stop the investigation. 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{test__hp_8cpp_ae8b0442ab7315f1316520c8f2b4ecd4f}\label{test__hp_8cpp_ae8b0442ab7315f1316520c8f2b4ecd4f}} 
+\index{test\_hp.cpp@{test\_hp.cpp}!cons\_IDs\_client@{cons\_IDs\_client}}
+\index{cons\_IDs\_client@{cons\_IDs\_client}!test\_hp.cpp@{test\_hp.cpp}}
+\doxysubsubsection{\texorpdfstring{cons\_IDs\_client}{cons\_IDs\_client}}
+{\footnotesize\ttfamily ros\+::\+Service\+Client cons\+\_\+\+I\+Ds\+\_\+client}
+
+\mbox{\Hypertarget{test__hp_8cpp_af9407637dcf0169d8a3d8906b821ea39}\label{test__hp_8cpp_af9407637dcf0169d8a3d8906b821ea39}} 
+\index{test\_hp.cpp@{test\_hp.cpp}!Cons\_IDs\_srv@{Cons\_IDs\_srv}}
+\index{Cons\_IDs\_srv@{Cons\_IDs\_srv}!test\_hp.cpp@{test\_hp.cpp}}
+\doxysubsubsection{\texorpdfstring{Cons\_IDs\_srv}{Cons\_IDs\_srv}}
+{\footnotesize\ttfamily exproblab\+\_\+ass2\+::\+Cons\+\_\+\+I\+Ds Cons\+\_\+\+I\+Ds\+\_\+srv}
+
+\mbox{\Hypertarget{test__hp_8cpp_a52292d0c85c17f39859a0636d7d083fb}\label{test__hp_8cpp_a52292d0c85c17f39859a0636d7d083fb}} 
+\index{test\_hp.cpp@{test\_hp.cpp}!oracle\_solution@{oracle\_solution}}
+\index{oracle\_solution@{oracle\_solution}!test\_hp.cpp@{test\_hp.cpp}}
+\doxysubsubsection{\texorpdfstring{oracle\_solution}{oracle\_solution}}
+{\footnotesize\ttfamily exproblab\+\_\+ass2\+::\+Oracle oracle\+\_\+solution}
+
+\mbox{\Hypertarget{test__hp_8cpp_a3679944f731acedb7efd8b04b2b71722}\label{test__hp_8cpp_a3679944f731acedb7efd8b04b2b71722}} 
+\index{test\_hp.cpp@{test\_hp.cpp}!sol\_publisher@{sol\_publisher}}
+\index{sol\_publisher@{sol\_publisher}!test\_hp.cpp@{test\_hp.cpp}}
+\doxysubsubsection{\texorpdfstring{sol\_publisher}{sol\_publisher}}
+{\footnotesize\ttfamily ros\+::\+Publisher sol\+\_\+publisher}
+
+\mbox{\Hypertarget{test__hp_8cpp_a798ee27eb1bd19aa48e94f203d3b96f6}\label{test__hp_8cpp_a798ee27eb1bd19aa48e94f203d3b96f6}} 
+\index{test\_hp.cpp@{test\_hp.cpp}!test\_hp\_client@{test\_hp\_client}}
+\index{test\_hp\_client@{test\_hp\_client}!test\_hp.cpp@{test\_hp.cpp}}
+\doxysubsubsection{\texorpdfstring{test\_hp\_client}{test\_hp\_client}}
+{\footnotesize\ttfamily ros\+::\+Service\+Client test\+\_\+hp\+\_\+client}
+

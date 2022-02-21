@@ -1,3 +1,21 @@
+/**
+* \file initialize.cpp
+* \brief move the arm and my robot
+* \author Lorenzo Causa
+* \version 1.0
+*
+*  Clients : <BR>
+*    /move_arm_service
+*
+* ActionClients : <BR>
+*    /go_to_point
+*
+* Description :
+*
+* This node move my robot and its arm to initialize the investigation
+*
+*/
+
 #include "rosplan_interface_ass2/initialize.h"
 #include <unistd.h>
 #include <actionlib/client/simple_action_client.h>
@@ -55,7 +73,7 @@ namespace KCL_rosplan {
 	}
 }
 
-
+/// Initialize the investigation
 int main(int argc, char **argv) {
 ros::init(argc, argv, "my_rosplan_action_initialize", ros::init_options::AnonymousName);
 ros::NodeHandle nh("~");

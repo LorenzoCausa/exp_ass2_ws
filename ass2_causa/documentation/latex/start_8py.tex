@@ -1,0 +1,65 @@
+\hypertarget{start_8py}{}\doxysection{exproblab\+\_\+ass2/scripts/start.py File Reference}
+\label{start_8py}\index{exproblab\_ass2/scripts/start.py@{exproblab\_ass2/scripts/start.py}}
+
+
+start the investigation  
+
+
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacestart}{start}}
+\item 
+ \mbox{\hyperlink{namespaceexproblab__ass2}{exproblab\+\_\+ass2}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacestart_af55d67a660d3ba7477b5b82c2855b3b8}{start.\+update\+\_\+knowledge\+\_\+predicate}} (is\+\_\+positive, predicate\+\_\+name, \mbox{\hyperlink{simulation_8cpp_a0049a8a39c319bf1470f36c9e0f75abd}{key}}, value)
+\item 
+def \mbox{\hyperlink{namespacestart_afbfbb6479aa5c41832fbf23b6442dc8e}{start.\+update\+\_\+knowledge\+\_\+goal}} (predicate\+\_\+name, \mbox{\hyperlink{simulation_8cpp_a0049a8a39c319bf1470f36c9e0f75abd}{key}}, value, is\+\_\+positive)
+\item 
+def \mbox{\hyperlink{namespacestart_a64dcdbe4bf3afd59994aea1a91ffbe2a}{start.\+update\+\_\+knowledge\+\_\+instance}} (name, instance\+Type)
+\item 
+def \mbox{\hyperlink{namespacestart_a220db6198f236f9b0ceac7c27231fcb1}{start.\+callback}} (data)
+\item 
+def \mbox{\hyperlink{namespacestart_a3e961ada4c3346d11f92b3e4dbb68b11}{start.\+main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacestart_a4681b27193fdf63ccf60918dcd1b43bc}{start.\+update\+\_\+knowledge\+\_\+client}} = None
+\item 
+int \mbox{\hyperlink{namespacestart_af363f6383aefe744b81a113b036d5435}{start.\+solution\+ID}} = -\/1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+start the investigation 
+
+\begin{DoxyAuthor}{Author}
+Lorenzo Causa 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+Clients \+: ~\newline
+ /rosplan\+\_\+problem\+\_\+interface/problem\+\_\+generation\+\_\+server
+
+/rosplan\+\_\+planner\+\_\+interface/planning\+\_\+server
+
+/rosplan\+\_\+parsing\+\_\+interface/parse\+\_\+plan
+
+/rosplan\+\_\+plan\+\_\+dispatcher/dispatch\+\_\+plan
+
+/rosplan\+\_\+knowledge\+\_\+base/update
+
+/rosplan\+\_\+knowledge\+\_\+base/clear
+
+Subscriber \+: ~\newline
+ /final\+\_\+solution
+
+Description\+: ~\newline
+
+
+This node start the investigation and force replanning until the solution has been found 

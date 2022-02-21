@@ -1,5 +1,20 @@
 #!/usr/bin/env python
 
+## @package exproblab_ass2
+#   \file move_arm.py
+#   \brief move the robot arm 
+#   \author Lorenzo Causa
+#   \version 1.0
+#
+#
+#   Services: <BR>
+#        /move_arm_service
+#          
+# Description:    
+# 
+# This node provide a service to move the robot arm
+#
+
 import sys
 import copy
 import rospy
@@ -15,7 +30,7 @@ from exproblab_ass2.srv import *
 group=None
 
 def move_arm_callback(req):
-    """ Handle of the move_arm_service."""
+    """ Callback of the move_arm_service."""
     global group
     # We get the joint values from the group and adjust some of the values:
     joint_goal = group.get_current_joint_values()

@@ -1,0 +1,77 @@
+\hypertarget{test__stuff_8cpp}{}\doxysection{rosplan\+\_\+interface\+\_\+ass2/src/test\+\_\+stuff.cpp File Reference}
+\label{test__stuff_8cpp}\index{rosplan\_interface\_ass2/src/test\_stuff.cpp@{rosplan\_interface\_ass2/src/test\_stuff.cpp}}
+{\ttfamily \#include \char`\"{}rosplan\+\_\+interface\+\_\+ass2/check\+\_\+hp.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib/client/simple\+\_\+action\+\_\+client.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib/client/terminal\+\_\+state.\+h$>$}\newline
+{\ttfamily \#include $<$exproblab\+\_\+ass2/go\+\_\+to\+\_\+point\+Action.\+h$>$}\newline
+{\ttfamily \#include $<$exproblab\+\_\+ass2/\+Move\+\_\+arm.\+h$>$}\newline
+{\ttfamily \#include $<$exproblab\+\_\+ass2/\+Cons\+\_\+\+I\+Ds.\+h$>$}\newline
+Include dependency graph for test\+\_\+stuff.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test__stuff_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{test__stuff_8cpp_a292bce4a4894e2c200553fd2b65b08cd}{new\+\_\+cons\+\_\+\+HP}} ()
+\item 
+void \mbox{\hyperlink{test__stuff_8cpp_ae1a3968e7947464bee7714f6d43b7002}{test}} ()
+\item 
+int \mbox{\hyperlink{test__stuff_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Service\+Client \mbox{\hyperlink{test__stuff_8cpp_ae8b0442ab7315f1316520c8f2b4ecd4f}{cons\+\_\+\+I\+Ds\+\_\+client}}
+\item 
+int \mbox{\hyperlink{test__stuff_8cpp_a2feb5dfb2b7b210b52e4f076207bc0c4}{old\+\_\+\+I\+Ds}} \mbox{[}6\mbox{]} =\{0,0,0,0,0,0\}
+\item 
+exproblab\+\_\+ass2\+::\+Cons\+\_\+\+I\+Ds \mbox{\hyperlink{test__stuff_8cpp_af9407637dcf0169d8a3d8906b821ea39}{Cons\+\_\+\+I\+Ds\+\_\+srv}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{test__stuff_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{test__stuff_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{test\_stuff.cpp@{test\_stuff.cpp}!main@{main}}
+\index{main@{main}!test\_stuff.cpp@{test\_stuff.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{test__stuff_8cpp_a292bce4a4894e2c200553fd2b65b08cd}\label{test__stuff_8cpp_a292bce4a4894e2c200553fd2b65b08cd}} 
+\index{test\_stuff.cpp@{test\_stuff.cpp}!new\_cons\_HP@{new\_cons\_HP}}
+\index{new\_cons\_HP@{new\_cons\_HP}!test\_stuff.cpp@{test\_stuff.cpp}}
+\doxysubsubsection{\texorpdfstring{new\_cons\_HP()}{new\_cons\_HP()}}
+{\footnotesize\ttfamily bool new\+\_\+cons\+\_\+\+HP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{test__stuff_8cpp_ae1a3968e7947464bee7714f6d43b7002}\label{test__stuff_8cpp_ae1a3968e7947464bee7714f6d43b7002}} 
+\index{test\_stuff.cpp@{test\_stuff.cpp}!test@{test}}
+\index{test@{test}!test\_stuff.cpp@{test\_stuff.cpp}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily void test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{test__stuff_8cpp_ae8b0442ab7315f1316520c8f2b4ecd4f}\label{test__stuff_8cpp_ae8b0442ab7315f1316520c8f2b4ecd4f}} 
+\index{test\_stuff.cpp@{test\_stuff.cpp}!cons\_IDs\_client@{cons\_IDs\_client}}
+\index{cons\_IDs\_client@{cons\_IDs\_client}!test\_stuff.cpp@{test\_stuff.cpp}}
+\doxysubsubsection{\texorpdfstring{cons\_IDs\_client}{cons\_IDs\_client}}
+{\footnotesize\ttfamily ros\+::\+Service\+Client cons\+\_\+\+I\+Ds\+\_\+client}
+
+\mbox{\Hypertarget{test__stuff_8cpp_af9407637dcf0169d8a3d8906b821ea39}\label{test__stuff_8cpp_af9407637dcf0169d8a3d8906b821ea39}} 
+\index{test\_stuff.cpp@{test\_stuff.cpp}!Cons\_IDs\_srv@{Cons\_IDs\_srv}}
+\index{Cons\_IDs\_srv@{Cons\_IDs\_srv}!test\_stuff.cpp@{test\_stuff.cpp}}
+\doxysubsubsection{\texorpdfstring{Cons\_IDs\_srv}{Cons\_IDs\_srv}}
+{\footnotesize\ttfamily exproblab\+\_\+ass2\+::\+Cons\+\_\+\+I\+Ds Cons\+\_\+\+I\+Ds\+\_\+srv}
+
+\mbox{\Hypertarget{test__stuff_8cpp_a2feb5dfb2b7b210b52e4f076207bc0c4}\label{test__stuff_8cpp_a2feb5dfb2b7b210b52e4f076207bc0c4}} 
+\index{test\_stuff.cpp@{test\_stuff.cpp}!old\_IDs@{old\_IDs}}
+\index{old\_IDs@{old\_IDs}!test\_stuff.cpp@{test\_stuff.cpp}}
+\doxysubsubsection{\texorpdfstring{old\_IDs}{old\_IDs}}
+{\footnotesize\ttfamily int old\+\_\+\+I\+Ds\mbox{[}6\mbox{]} =\{0,0,0,0,0,0\}}
+

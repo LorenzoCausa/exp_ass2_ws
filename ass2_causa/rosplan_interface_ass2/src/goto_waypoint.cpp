@@ -1,3 +1,18 @@
+/**
+* \file goto_waypoint.cpp
+* \brief move my robot
+* \author Lorenzo Causa
+* \version 1.0
+*
+* ActionClients : <BR>
+*    /go_to_point
+*
+* Description :
+*
+* move the robot to the correct waypoint (the one choosen by the planner)
+*
+*/
+
 #include "rosplan_interface_ass2/goto_waypoint.h"
 #include <unistd.h>
 #include <actionlib/client/simple_action_client.h>
@@ -50,7 +65,7 @@ namespace KCL_rosplan {
   }
 }
 
-
+///This node move the robot to the correct waypoint
 int main(int argc, char **argv) {
 ros::init(argc, argv, "my_rosplan_action_goto_waypoint", ros::init_options::AnonymousName);
 ros::NodeHandle nh("~");
