@@ -18,6 +18,7 @@ import diagnostic_msgs.msg
 
 # GLOBAL VARIABLES
 update_knowledge_client=None
+solutionID = -1
     
 #FUNCTIONS
 def update_knowledge_predicate(is_positive,predicate_name,key,value):
@@ -58,6 +59,9 @@ def update_knowledge_instance(name,instanceType):
     result=update_knowledge_client(update_req)
     print('instance knowledge updated: ',instanceType,name)
 
+def callback(data):
+    global solutionID
+    solutionID = data.data
 
 def main():
     """main of the start node"""
@@ -82,9 +86,11 @@ def main():
     #prop_client=rospy.ServiceProxy('rosplan_knowledge_base/state/propositions',rosplan_knowledge_msgs.srv.GetAttributeService) #not used for now, needed for avoid to try to take the hint from your start position
     clear_knowledge=rospy.ServiceProxy('rosplan_knowledge_base/clear',Empty) 
     
+    # Generates subscriber
+    rospy.Subscriber("/final_solution", Int32, callback)
     
     success=False
-    while success==False:
+    while solutionID==-1:
         clear_knowledge()
         update_knowledge_predicate(True,'not_initialized','','')
         update_knowledge_instance('wp1','waypoint')
@@ -106,10 +112,11 @@ def main():
         print('Dispatching plan')
         dispatchRes=dipatch_client()
         success=dispatchRes.goal_achieved
-        print('Plan dispatched, success: ',success)
-        time.sleep(10)
+        print('Plan dispatched: ')
+        time.sleep(1)
 
-    print('Goal achieved!')
+    print('case solved!')
+    print('ID solution: ',solutionID)
     
 if __name__ == '__main__':
     main()

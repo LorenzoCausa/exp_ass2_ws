@@ -35,36 +35,39 @@ def callback(hint):
     #rospy.set_param('ID'+str(hint.ID)+'/'+ hint.key,hint.value)
     flag_duplicate=False
     i=0
+    if(hint.value!='-1'):
+        if(hint.key=='who'):
+            while ((i<len(hypotheses[hint.ID].murderer))and (flag_duplicate==False)):
+                if(hint.value==hypotheses[hint.ID].murderer[i]):
+                    hypotheses[hint.ID].murderer.remove(hint.value)
+                    flag_duplicate=True
+                i=i+1
+            hypotheses[hint.ID].murderer.append(hint.value)
 
-    if(hint.key=='who'):
-        while ((i<len(hypotheses[hint.ID].murderer))and (flag_duplicate==False)):
-            if(hint.value==hypotheses[hint.ID].murderer[i]):
-                hypotheses[hint.ID].murderer.remove(hint.value)
-                flag_duplicate=True
-            i=i+1
-        hypotheses[hint.ID].murderer.append(hint.value)
+        flag_duplicate=False
+        i=0    
+        if(hint.key=='where'):
+            while ((i<len(hypotheses[hint.ID].murder_place))and (flag_duplicate==False)):
+                if(hint.value==hypotheses[hint.ID].murder_place[i]):
+                    hypotheses[hint.ID].murder_place.remove(hint.value)
+                    flag_duplicate=True
+                i=i+1
+            hypotheses[hint.ID].murder_place.append(hint.value)
 
-    flag_duplicate=False
-    i=0    
-    if(hint.key=='where'):
-        while ((i<len(hypotheses[hint.ID].murder_place))and (flag_duplicate==False)):
-            if(hint.value==hypotheses[hint.ID].murder_place[i]):
-                hypotheses[hint.ID].murder_place.remove(hint.value)
-                flag_duplicate=True
-            i=i+1
-        hypotheses[hint.ID].murder_place.append(hint.value)
+        flag_duplicate=False
+        i=0     
+        if(hint.key=='what'):
+            while ((i<len(hypotheses[hint.ID].murder_weapon))and (flag_duplicate==False)):
+                if(hint.value==hypotheses[hint.ID].murder_weapon[i]):
+                    hypotheses[hint.ID].murder_weapon.remove(hint.value)
+                    flag_duplicate=True
+                i=i+1
+            hypotheses[hint.ID].murder_weapon.append(hint.value)
 
-    flag_duplicate=False
-    i=0     
-    if(hint.key=='what'):
-        while ((i<len(hypotheses[hint.ID].murder_weapon))and (flag_duplicate==False)):
-            if(hint.value==hypotheses[hint.ID].murder_weapon[i]):
-                hypotheses[hint.ID].murder_weapon.remove(hint.value)
-                flag_duplicate=True
-            i=i+1
-        hypotheses[hint.ID].murder_weapon.append(hint.value)
-        
-    print('New hint added!')
+    print("New hint added!")
+    print('ID:',hint.ID,",",hint.key,",",hint.value)
+    
+
     
 def cons_IDs_callback(req):
     global old_hp

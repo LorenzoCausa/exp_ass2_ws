@@ -22,6 +22,7 @@ find_package(catkin REQUIRED
   moveit_commander
   moveit_msgs
   rosplan_planning_system
+  std_msgs
 )
 
 
