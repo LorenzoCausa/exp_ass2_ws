@@ -82,6 +82,6 @@
   <node name="listener" pkg="exproblab_ass2" type ="listener.py"/>
   <node name="replan" pkg="exproblab_ass2" type ="replan.py"/>
     -->
-
+  <node name="move_arm" pkg="exproblab_ass2" type ="move_arm.py"/>
 
 </launch>
