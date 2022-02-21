@@ -9,7 +9,26 @@ In the diagram below you can see the nodes necessary for the correct functioning
 ![Alt text](images/componentUML.png?raw=true)
 
 * **start:** This node starts the investigation and replan in a loop until the solution is found. The solution is signaled by receiving the message with the ID of the correct hypothesis (via subscrition to the topic /final solution).
-* 
+* **ROSPLAN:** This component represents all parts that we saw of rosplan: Knowledge Base, Problem Interface, Planner Interface, Parsing Interface, Plan Dispatch.
+* **simulation** The node given by the prof. It provides a publisher for the hints and a service for check the correct hipothesis's ID.
+* **simulator** This component represents all nodes and interfaces of the simulation like gazebo and rviz.
+
+**ACTIONs**
+
+This are the nodes implementing the actions of the pddl:
+* **initialize**: Brings the arm in the start pose and move my robot in a starting waypoint.
+* **goto_waypoint**: Move my robot in waypoints.
+* **take_hint**: Move the arm to take the hint and return to the start pose.
+* **check_hp**: Check if there are new consistent hypoteses.
+* **test_hp**: Test consistent hypotheses and if the correct one is found send the final solution message to stop the investigation. 
+
+**SERVICEs**
+
+This are nodes that I wrote to implement services that I need.
+* **listener:** It listen the hints and provide a services to check consistent hypotheses.
+* **move_arm:** It provides a service to use moveit and move the arm.
+* **replan:** It provides a service to cancel the current plan and force a replan.
+* **go_to_point:** It provides a service to move to a point on the map with a certain orientation.
 
 # TO DO LIST:
 1) Aggiusta il plan, ogni volta rifa initialize e potrebbe tornare a prendere l'hint dall'ultimo waypoint 
