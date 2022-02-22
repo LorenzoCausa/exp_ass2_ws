@@ -30,6 +30,13 @@ This are nodes that I wrote to implement services that I need.
 * **replan:** It provides a service to cancel the current plan and force a replan.
 * **go_to_point:** It provides a service to move to a point on the map with a certain orientation.
 
+## State Diagram
+The code does not have an explicit state machine (it uses rosplanner to manage the logic), however its behavior can be represented with the simple state diagram below.
+* **Plan:** In this phase a new plan will be generated, this plan goal is to test hypotheses. To do this, all waypoints must be visited and it must be checked that there are new coherent hypotheses.
+* **Dispatch Plan:** In this phase the previously generated plan is actuated. When the current plan became unable to find the solution the replan is triggered. 
+
+![Alt text](images/stateDiagram.png?raw=true)
+
 # TO DO LIST:
 1) Aggiusta il plan, ogni volta rifa initialize e potrebbe tornare a prendere l'hint dall'ultimo waypoint 
 2) Aggiungi test_hp 
