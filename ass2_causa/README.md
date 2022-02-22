@@ -96,6 +96,8 @@ roslaunch exproblab_ass2 my_services.launch
 ```
 rosrun exproblab_ass2 start.py
 ```
+**Note:** If you are using the docker it is highly advisable to do `apt-get update` and `apt-get upgrade`. Without it, strange behaviors occurred during the tests.
+
 ## Behavior
 The behavior of the robot in the enviroment is straightforward:
 1) Take hint in all waypoints.
