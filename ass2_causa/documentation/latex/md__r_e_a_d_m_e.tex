@@ -1,2 +1,37 @@
-1) Aggiusta il plan, ogni volta rifa initialize e potrebbe tornare a prendere l\textquotesingle{}hint dall\textquotesingle{}ultimo waypoint 2) Aggiungi test\+\_\+hp 3) Il robot si ferma senza motivo tra le action, aggiustalo (non ho idea del perche ma succede anche a fedezecchi) 4) Attento a non ritestare ipotesi già testate una volta\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{C\+O\+M\+E L\+A\+N\+C\+I\+A\+R\+L\+O\+:}\label{md__r_e_a_d_m_e_autotoc_md1}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{Introduction}\label{md__r_e_a_d_m_e_autotoc_md1}
+This is a R\+OS package that simulates a simple Cluedo-\/like investigation. It uses rosplan to manage pddl logic as reasoner and moveit for moving the arm and reach the hints.\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{Software architecture}\label{md__r_e_a_d_m_e_autotoc_md2}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysubsection{Component diagram}\label{md__r_e_a_d_m_e_autotoc_md3}
+In the diagram below you can see the nodes necessary for the correct functioning of the code. Since there are many nodes the complete component diagram would be unreadable. For this reason the proposed component diagram shows only the main parts and the most general connections.
+
+
+
+
+\begin{DoxyItemize}
+\item {\bfseries{start\+:}} This node starts the investigation and replan in a loop until the solution is found. The solution is signaled by receiving the message with the ID of the correct hypothesis (via subscrition to the topic /final solution).
+\item {\bfseries{R\+O\+S\+P\+L\+AN\+:}} This component represents all parts that we saw of rosplan\+: Knowledge Base, Problem Interface, Planner Interface, Parsing Interface, Plan Dispatch.
+\item {\bfseries{simulation}} The node given by the prof. It provides a publisher for the hints and a service for check the correct hipothesis\textquotesingle{}s ID.
+\item {\bfseries{simulator}} This component represents all nodes and interfaces of the simulation like gazebo and rviz.
+\end{DoxyItemize}
+
+{\bfseries{A\+C\+T\+I\+O\+Ns}}
+
+This are the nodes implementing the actions of the pddl\+:
+\begin{DoxyItemize}
+\item {\bfseries{initialize}}\+: Brings the arm in the start pose and move my robot in a starting waypoint.
+\item {\bfseries{goto\+\_\+waypoint}}\+: Move my robot in waypoints.
+\item {\bfseries{take\+\_\+hint}}\+: Move the arm to take the hint and return to the start pose.
+\item {\bfseries{check\+\_\+hp}}\+: Check if there are new consistent hypoteses.
+\item {\bfseries{test\+\_\+hp}}\+: Test consistent hypotheses and if the correct one is found send the final solution message to stop the investigation.
+\end{DoxyItemize}
+
+{\bfseries{S\+E\+R\+V\+I\+C\+Es}}
+
+This are nodes that I wrote to implement services that I need.
+\begin{DoxyItemize}
+\item {\bfseries{listener\+:}} It listen the hints and provide a services to check consistent hypotheses.
+\item {\bfseries{\mbox{\hyperlink{namespacemove__arm}{move\+\_\+arm}}\+:}} It provides a service to use moveit and move the arm.
+\item {\bfseries{replan\+:}} It provides a service to cancel the current plan and force a replan.
+\item {\bfseries{\mbox{\hyperlink{namespacego__to__point}{go\+\_\+to\+\_\+point}}\+:}} It provides a service to move to a point on the map with a certain orientation.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{T\+O D\+O L\+I\+S\+T\+:}\label{md__r_e_a_d_m_e_autotoc_md4}
+1) Aggiusta il plan, ogni volta rifa initialize e potrebbe tornare a prendere l\textquotesingle{}hint dall\textquotesingle{}ultimo waypoint 2) Aggiungi test\+\_\+hp 3) Il robot si ferma senza motivo tra le action, aggiustalo (non ho idea del perche ma succede anche a fedezecchi) 4) Attento a non ritestare ipotesi già testate una volta\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysection{C\+O\+M\+E L\+A\+N\+C\+I\+A\+R\+L\+O\+:}\label{md__r_e_a_d_m_e_autotoc_md5}
 1) roslaunch \mbox{\hyperlink{namespaceexproblab__ass2}{exproblab\+\_\+ass2}} my\+\_\+robot\+\_\+in\+\_\+the\+\_\+map.\+launch 2) roslaunch \mbox{\hyperlink{namespaceexproblab__ass2}{exproblab\+\_\+ass2}} rosplan.\+launch 3) roslaunch \mbox{\hyperlink{namespaceexproblab__ass2}{exproblab\+\_\+ass2}} my\+\_\+services.\+launch 4) rosrun \mbox{\hyperlink{namespaceexproblab__ass2}{exproblab\+\_\+ass2}} \mbox{\hyperlink{start_8py}{start.\+py}} 

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['to_20do_20list_3a_80',['TO DO LIST:',['../md__r_e_a_d_m_e.html',1,'']]],
   ['take_5fhint_2ecpp_81',['take_hint.cpp',['../take__hint_8cpp.html',1,'']]],
   ['take_5fhint_2eh_82',['take_hint.h',['../take__hint_8h.html',1,'']]],
   ['test_83',['test',['../test__stuff_8cpp.html#ae1a3968e7947464bee7714f6d43b7002',1,'test_stuff.cpp']]],

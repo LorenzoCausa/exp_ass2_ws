@@ -51,6 +51,7 @@ solutionID = -1
     
 #FUNCTIONS
 def update_knowledge_predicate(is_positive,predicate_name,key,value):
+    '''Updates state of a predicate of my problem'''
     global update_knowledge_client
     update_req=rosplan_knowledge_msgs.srv.KnowledgeUpdateServiceRequest()
     update_req.knowledge.is_negative=not(is_positive)
@@ -65,6 +66,7 @@ def update_knowledge_predicate(is_positive,predicate_name,key,value):
     print('predicate knowledge updated: ',predicate_name,key,value,is_positive)
 
 def update_knowledge_goal(predicate_name,key,value,is_positive):
+    '''Add a goal to my problem'''
     global update_knowledge_client
     update_req=rosplan_knowledge_msgs.srv.KnowledgeUpdateServiceRequest()
     update_req.knowledge.is_negative=not(is_positive)
@@ -79,6 +81,7 @@ def update_knowledge_goal(predicate_name,key,value,is_positive):
     print('goal knowledge updated: ',predicate_name,key,value,is_positive)
 
 def update_knowledge_instance(name,instanceType):
+    '''Add a instance to my problem'''
     global update_knowledge_client
     update_req=rosplan_knowledge_msgs.srv.KnowledgeUpdateServiceRequest()
     update_req.update_type=0
@@ -89,11 +92,12 @@ def update_knowledge_instance(name,instanceType):
     print('instance knowledge updated: ',instanceType,name)
 
 def callback(data):
+    '''Callback of the subscriber, it receive the final solution of the investigation'''
     global solutionID
     solutionID = data.data
 
 def main():
-    """main of the start node"""
+    """main of the start node, start the investigation and force replanning until the solution has been found  """
     global update_knowledge_client
     rospy.init_node('start',anonymous=True)
     # Wait for all services
