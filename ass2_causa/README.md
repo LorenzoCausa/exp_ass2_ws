@@ -48,6 +48,12 @@ Although the code uses a planner (whose domain and problem are defined via pddl)
 
 ![Alt text](images/TemporalDiagram.png?raw=true)
 
+## List of srv implemented
+* **Cons_IDs**: It can be used in two ways: to get all the IDs of my consistent hypotheses, or to get only the IDs of my new consistent hypotheses (once an ID is returned from this service it is considered old).
+* **Move_arm**: This service allows the robot arm to be moved in any configuration. It takes as input 5 floats each representing the angle of one of the 5 joints.
+* **Oracle**: Service given by the professor. Return the ID of the correct solution
+* **Replan**: It cancel the current dispatch and force a replan.
+
 # TO DO LIST:
 1) Aggiusta il plan, ogni volta rifa initialize e potrebbe tornare a prendere l'hint dall'ultimo waypoint 
 2) Aggiungi test_hp 
