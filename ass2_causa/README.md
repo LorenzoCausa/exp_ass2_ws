@@ -37,6 +37,11 @@ The code does not have an explicit state machine (it uses rosplanner to manage t
 
 ![Alt text](images/stateDiagram.png?raw=true)
 
+## Temporal Diagram
+
+
+![Alt text](images/TemporalDiagram.png?raw=true)
+
 # TO DO LIST:
 1) Aggiusta il plan, ogni volta rifa initialize e potrebbe tornare a prendere l'hint dall'ultimo waypoint 
 2) Aggiungi test_hp 
