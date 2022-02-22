@@ -96,6 +96,13 @@ roslaunch exproblab_ass2 my_services.launch
 ```
 rosrun exproblab_ass2 start.py
 ```
+## Behavior
+The behavior of the robot in the enviroment is straightforward:
+1) Take hint in all waypoints.
+2) Check if there are new consistent hypotheses, if no restart from 1.
+3) Test my hypotheses, if none is the correct one restart from 1.
+
+GIF DI GAZEBO ACCELERATO
 
 # TO DO LIST:
 1) Aggiusta il plan, ogni volta rifa initialize e potrebbe tornare a prendere l'hint dall'ultimo waypoint 
