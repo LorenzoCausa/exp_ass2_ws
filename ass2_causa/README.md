@@ -66,10 +66,31 @@ To use this package some external packages are needed:
 
 ### Installation
 The installation is straightforward, just clone this repository to your ros workspace and do the catkin_make:
+
 ```
-rosrun rqt_graph rqt_graph
+git clone https://github.com/LorenzoCausa/exp_ass2_ws
 ```
 
+**Note:** This repository also contains the required external packages, if you use the docker that was provided to us you will already have them in your workspace, so you will have to delete the duplicate packages and keep only the folder with the actual assignment, which is `ass2_causa`.
+
+## Running procedure
+To use this code you need to run in this order in separate terminals the following:
+1) This will open gazebo and rviz with the the robot and the hints in the map.
+```
+roslaunch exproblab_ass2 my_robot_in_the_map.launch 
+```
+2) This will start rosplan with all its parts. From this terminal you can see the action that the robot is performing.
+```
+roslaunch exproblab_ass2 rosplan.launch
+```
+3) This will start the services that I implemented. From this terminal you can see the hints, and when checked you can also see the current hypotheses.
+```
+roslaunch exproblab_ass2 my_services.launch
+```
+4) This will start the simulation. This terminal shows the replannings and when is found prints the ID of the solution.
+```
+rosrun exproblab_ass2 start.py
+```
 
 # TO DO LIST:
 1) Aggiusta il plan, ogni volta rifa initialize e potrebbe tornare a prendere l'hint dall'ultimo waypoint 
