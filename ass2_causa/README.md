@@ -38,7 +38,13 @@ The code does not have an explicit state machine (it uses rosplanner to manage t
 ![Alt text](images/stateDiagram.png?raw=true)
 
 ## Temporal Diagram
+Although the code uses a planner (whose domain and problem are defined via pddl) the plan found can be described by a time diagram since its structure is always the same.
 
+1) **Initialization:** the arm is placed in the starting position and the robot is moved to a waypoint.
+2) **take the hint:** the arm moves to place the cluedo link in the hint receiving sphere, after that it returns to the starting position.
+3) **move to a waypoint:** the robot moves to a waypoint whose hint has not yet been taken.
+4) **check hypotheses:** check if there are any new consistent hypotheses. If there are, then go to the test. If there are no new consistent hypotheses, the plan is canceled and a new one is replanned (restarts from (1))
+5) **test hypotheses:** test if my consistent hypotheses are the solution. If none of the currently consistent hypotheses are correct then the replan is done (restarts from (1)). If the solution is among my consistent hypotheses, the simulation ends as the crime is solved.
 
 ![Alt text](images/TemporalDiagram.png?raw=true)
 
