@@ -54,6 +54,23 @@ Although the code uses a planner (whose domain and problem are defined via pddl)
 * **Oracle**: Service given by the professor. Return the ID of the correct solution
 * **Replan**: It cancel the current dispatch and force a replan.
 
+## Installation and running procedure
+### Requirements
+To use this package some external packages are needed:
+* Moveit
+* occupancy_grid_utils
+* ROSPlan
+* rosplan_demos
+
+**Note:** If you use the docker that was provided to us these packages should be already installed.
+
+### Installation
+The installation is straightforward, just clone this repository to your ros workspace and do the catkin_make:
+```
+rosrun rqt_graph rqt_graph
+```
+
+
 # TO DO LIST:
 1) Aggiusta il plan, ogni volta rifa initialize e potrebbe tornare a prendere l'hint dall'ultimo waypoint 
 2) Aggiungi test_hp 
