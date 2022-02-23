@@ -139,12 +139,22 @@ The system also wants to be versatile, it uses the one provided by the teacher a
 2) To solve (2) it would have been sufficient to write the PDDL in such a way as to check the new consistent hypotheses after each suggestion taken, it was decided not to use this solution since there would have been plans with very few actions removing any freedom from rosplan planning (and effectively making it a state machine).
 3) The robot arm only makes a predefined ad hoc movement to take the hints, if the robot for any reason is positioned incorrectly the arm would miss the hint (in my tests this never happened but it would be possible in a less ideal simulation). The solution can be to use moveit to move *cluedo_link* exactly into the "hint sphere" with a closed loop method.
 
+## Documentation
+All the doxygen documentation is in the *documentation* folder or you can access it by clicking here:
+[click Here!]() <-aggiungi
+
+## Author and contacts
+The system was developed entirely by me, below my credentials and contacts:
+
+**Lorenzo Causa, 4519089**
+
+**mail**: lorenzo.causa1998@gmail.com
+
+**phone number**: 3247427182  
 
 # TO DO LIST:
 1) Aggiusta il plan, ogni volta rifa initialize e potrebbe tornare a prendere l'hint dall'ultimo waypoint 
-2) Aggiungi test_hp 
-3) Il robot si ferma senza motivo tra le action, aggiustalo (non ho idea del perche ma succede anche a fedezecchi)
-4) Attento a non ritestare ipotesi già testate una volta
+2) Il robot si ferma senza motivo tra le action, aggiustalo (non ho idea del perche ma succede anche a fedezecchi)
 
 # COME LANCIARLO:
 1) roslaunch exproblab_ass2 my_robot_in_the_map.launch 
