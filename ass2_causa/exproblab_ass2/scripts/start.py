@@ -144,6 +144,7 @@ def main():
         dispatchRes=dipatch_client()
         success=dispatchRes.goal_achieved
         print('Plan dispatched. ')
+        print('---------------')
         time.sleep(1)
 
     print('\nCASE SOLVED!')
