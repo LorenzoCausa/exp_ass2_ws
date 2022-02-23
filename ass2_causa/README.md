@@ -154,6 +154,4 @@ The system was developed entirely by me, below my credentials and contacts:
 
 **phone number**: 3247427182  
 
-# TO DO LIST:
-Il robot si ferma senza motivo tra le action (solo su docker), aggiustalo (non ho idea del perche ma succede anche a fedezecchi)
 
