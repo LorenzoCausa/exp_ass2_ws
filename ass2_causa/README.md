@@ -124,9 +124,10 @@ The system also wants to be versatile, it uses the one provided by the teacher a
 
 ## System features
 * Robot with five controlable joints via moveit
-* Modularity
 * Replanning when the plan is no longer able to find a solution
 * Test of the hypotheses only when a new consistent one is found
+* Modularity
+* Flexibility
 
 ## System limitations and improvements
 ### Limitations
@@ -135,7 +136,7 @@ The system also wants to be versatile, it uses the one provided by the teacher a
 3) Takes the hints with open-loop control
 4) When it reinitializes, it could theoretically go to the last waypoint from which it took the last suggestion, however this actually never happens because rosplan always visits the waypoints always in the same order (wp1, wp2, wp3, wp4).
 
-### Possible solutions
+### Possible solutions and improvements
 1) To solve (1) the only solutions are to speed up the robot (increasing the risk of overturn the robot) or to modify the oracle and decrease the number of hints needed (for example by removing the repetition of hints already found).
 2) To solve (2) it would have been sufficient to write the PDDL in such a way as to check the new consistent hypotheses after each suggestion taken, it was decided not to use this solution since there would have been plans with very few actions removing any freedom from rosplan planning (and effectively making it a state machine).
 3) The robot arm only makes a predefined ad hoc movement to take the hints, if the robot for any reason is positioned incorrectly the arm would miss the hint (in my tests this never happened but it would be possible in a less ideal simulation). The solution can be to use moveit to move *cluedo_link* exactly into the "hint sphere" with a closed loop method.
