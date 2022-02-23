@@ -104,14 +104,18 @@ The behavior of the robot in the enviroment is straightforward:
 2) Check if there are new consistent hypotheses, if no restart from 1.
 3) Test my hypotheses, if none is the correct one restart from 1.
 
+## Video demo
+If you run properly the code you should see something like this
+
 ![Alt Text](images/myGif.gif?raw=true) 
 
-## Video demo
-You can take a look at the video demo of the project from here:
+You can take a look at the complete video demo of the project from here:
 
-[Click here](https://drive.google.com/file/d/19bVcvyharlvQVmf7I7Xl9lshpYOw73yZ/view?usp=sharing)
+[Click here](https://drive.google.com/file/d/1NaVbCxEIZJVQB7wqzuCuNIktaiBzbQI3/view?usp=sharing)
 
-**Note:** The video shows only a portion of the entire 'investigation' as it usually lasts quite a long time.
+**Note:** 
+* The video shows only a portion of the entire 'investigation' as it usually lasts quite a long time.
+* Both GIF and video have been accelerated to make them shorter and with less downtime.
 
 # TO DO LIST:
 1) Aggiusta il plan, ogni volta rifa initialize e potrebbe tornare a prendere l'hint dall'ultimo waypoint 
