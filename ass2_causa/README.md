@@ -133,15 +133,16 @@ The system also wants to be versatile, it uses the one provided by the teacher a
 1) Very long investigation
 2) It is necessary to finish taking hints in all waypoints before checking if any new consistent hypotheses have been found
 3) Takes the hints with open-loop control
+4) When it reinitializes, it could theoretically go to the last waypoint from which it took the last suggestion, however this actually never happens because rosplan always visits the waypoints always in the same order (wp1, wp2, wp3, wp4).
 
 ### Possible solutions
 1) To solve (1) the only solutions are to speed up the robot (increasing the risk of overturn the robot) or to modify the oracle and decrease the number of hints needed (for example by removing the repetition of hints already found).
 2) To solve (2) it would have been sufficient to write the PDDL in such a way as to check the new consistent hypotheses after each suggestion taken, it was decided not to use this solution since there would have been plans with very few actions removing any freedom from rosplan planning (and effectively making it a state machine).
 3) The robot arm only makes a predefined ad hoc movement to take the hints, if the robot for any reason is positioned incorrectly the arm would miss the hint (in my tests this never happened but it would be possible in a less ideal simulation). The solution can be to use moveit to move *cluedo_link* exactly into the "hint sphere" with a closed loop method.
+4) Before deleting the entire plan and forcing the replan, the last waypoint visited by the robot should be memorized and then added to the PDDL problem before replanning.
 
 ## Documentation
-All the doxygen documentation is in the *documentation* folder or you can access it by clicking here:
-[click Here!]() <-aggiungi
+All the doxygen documentation is in the *documentation* folder.
 
 ## Author and contacts
 The system was developed entirely by me, below my credentials and contacts:
@@ -153,11 +154,5 @@ The system was developed entirely by me, below my credentials and contacts:
 **phone number**: 3247427182  
 
 # TO DO LIST:
-1) Aggiusta il plan, ogni volta rifa initialize e potrebbe tornare a prendere l'hint dall'ultimo waypoint 
-2) Il robot si ferma senza motivo tra le action, aggiustalo (non ho idea del perche ma succede anche a fedezecchi)
+Il robot si ferma senza motivo tra le action (solo su docker), aggiustalo (non ho idea del perche ma succede anche a fedezecchi)
 
-# COME LANCIARLO:
-1) roslaunch exproblab_ass2 my_robot_in_the_map.launch 
-2) roslaunch exproblab_ass2 rosplan.launch
-3) roslaunch exproblab_ass2 my_services.launch
-4) rosrun exproblab_ass2 start.py
