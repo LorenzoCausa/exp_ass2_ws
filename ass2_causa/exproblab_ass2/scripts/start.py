@@ -63,7 +63,7 @@ def update_knowledge_predicate(is_positive,predicate_name,key,value):
     key_value.value=value
     update_req.knowledge.values.append(key_value)
     result=update_knowledge_client(update_req)
-    print('predicate knowledge updated: ',predicate_name,key,value,is_positive)
+    #print('predicate knowledge updated: ',predicate_name,key,value,is_positive)
 
 def update_knowledge_goal(predicate_name,key,value,is_positive):
     '''Add a goal to my problem'''
@@ -78,7 +78,7 @@ def update_knowledge_goal(predicate_name,key,value,is_positive):
     key_value.value=value
     update_req.knowledge.values.append(key_value)
     result=update_knowledge_client(update_req)
-    print('goal knowledge updated: ',predicate_name,key,value,is_positive)
+    #print('goal knowledge updated: ',predicate_name,key,value,is_positive)
 
 def update_knowledge_instance(name,instanceType):
     '''Add a instance to my problem'''
@@ -89,7 +89,7 @@ def update_knowledge_instance(name,instanceType):
     update_req.knowledge.instance_name=name
     update_req.knowledge.instance_type=instanceType
     result=update_knowledge_client(update_req)
-    print('instance knowledge updated: ',instanceType,name)
+    #print('instance knowledge updated: ',instanceType,name)
 
 def callback(data):
     '''Callback of the subscriber, it receive the final solution of the investigation'''
@@ -132,18 +132,18 @@ def main():
         update_knowledge_goal('hp_tested','','',True)
         # Call services to start the system
         prob_gen_client()
-        print('Problem generated')
+        print('New problem generated')
         #time.sleep(1)
         plan_client()
-        print('Plan generated')
+        print('New plan generated')
         #time.sleep(1)
         parse_client()
-        print('Plan parsed')
+        print('New plan parsed')
         #time.sleep(1)
         print('Dispatching plan')
         dispatchRes=dipatch_client()
         success=dispatchRes.goal_achieved
-        print('Plan dispatched: ')
+        print('Plan dispatched. ')
         time.sleep(1)
 
     print('\nCASE SOLVED!')
