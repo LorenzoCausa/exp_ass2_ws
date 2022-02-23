@@ -117,6 +117,29 @@ You can take a look at the complete video demo of the project from here:
 * The video shows only a portion of the entire 'investigation' as it usually lasts quite a long time.
 * Both GIF and video have been accelerated to make them shorter and with less downtime.
 
+## Environment and working hypothesis 
+The simulation environment was entirely provided by the professor, no changes were made to any of the parts that were given to us.
+The code is designed to be robust and reusable, all implemented services can be used for similar a problem with few modifations. 
+The system also wants to be versatile, it uses the one provided by the teacher as oracle but it would also work with a different logic, the only necessary adjustments would concern the communication interfaces with it.
+
+## System features
+* Robot with five controlable joints via moveit
+* Modularity
+* Replanning when the plan is no longer able to find a solution
+* Test of the hypotheses only when a new consistent one is found
+
+## System limitations and improvements
+### Limitations
+1) Very long investigation
+2) It is necessary to finish taking hints in all waypoints before checking if any new consistent hypotheses have been found
+3) Takes the hints with open-loop control
+
+### Possible solutions
+1) To solve (1) the only solutions are to speed up the robot (increasing the risk of overturn the robot) or to modify the oracle and decrease the number of hints needed (for example by removing the repetition of hints already found).
+2) To solve (2) it would have been sufficient to write the PDDL in such a way as to check the new consistent hypotheses after each suggestion taken, it was decided not to use this solution since there would have been plans with very few actions removing any freedom from rosplan planning (and effectively making it a state machine).
+3) The robot arm only makes a predefined ad hoc movement to take the hints, if the robot for any reason is positioned incorrectly the arm would miss the hint (in my tests this never happened but it would be possible in a less ideal simulation). The solution can be to use moveit to move *cluedo_link* exactly into the "hint sphere" with a closed loop method.
+
+
 # TO DO LIST:
 1) Aggiusta il plan, ogni volta rifa initialize e potrebbe tornare a prendere l'hint dall'ultimo waypoint 
 2) Aggiungi test_hp 
