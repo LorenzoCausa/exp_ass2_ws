@@ -107,9 +107,9 @@ The behavior of the robot in the enviroment is straightforward:
 ![Alt Text](images/myGif.gif?raw=true) 
 
 ## Video demo
-You can take a look at the complete video demo of the project from here:
+You can take a look at the video demo of the project from here:
 
-[Video demo here](https://drive.google.com/file/d/19bVcvyharlvQVmf7I7Xl9lshpYOw73yZ/view?usp=sharing)
+[Click here](https://drive.google.com/file/d/19bVcvyharlvQVmf7I7Xl9lshpYOw73yZ/view?usp=sharing)
 
 **Note:** The video shows only a portion of the entire 'investigation' as it usually lasts quite a long time.
 
