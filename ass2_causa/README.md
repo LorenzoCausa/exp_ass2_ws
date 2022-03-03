@@ -154,4 +154,7 @@ The system was developed entirely by me, below my credentials and contacts:
 
 **phone number**: 3247427182  
 
+## Third assignment
+You can open the repo of the third assignment by clicking 
+[here](https://github.com/LorenzoCausa/ass3_causa)
 
